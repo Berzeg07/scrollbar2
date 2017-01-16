@@ -1,0 +1,68 @@
+
+body {
+    line-height: 1.4;
+    margin: 0;
+    min-width: 320px;
+}
+p {
+    margin: 0 0 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Header
+===========================*/
+
+.header {
+    background: black;
+}
+
+/* Nav */
+
+.nav-container {
+    border-bottom: 1px solid #424348;
+    padding: 20px 0;
+}
+.nav{
+    text-align: center;
+}
+.nav a{
+    color:#fff;
+    text-decoration: none;
+    padding: 21px 46px;
+}
+.nav a:hover{
+    background:rgba(255,255,255, 0.5);
+}
+.div1, .div2, .div3{
+    width: 800px;
+    height: 300px;
+    margin: 100px auto;
+    border:1px solid black;
+}
+
+/* Стили при фиксации меню
+=============================*/
+
+.header-no-fixed{
+    display:none;
+    position:none;
+}
+// Тут можно задать изменение цвета фона при скроле
+.header-fixed{
+    position:fixed;
+    top:0;
+    z-index:999;
+    background: rgba(#2B66AA, 0.9);
+    width:100%;
+}
+
+
+

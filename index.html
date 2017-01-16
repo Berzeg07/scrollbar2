@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Фиксируем меню при скролле</title>
+    <link rel="stylesheet" href="wow/animate.css">
+</head>
+<body>
+
+
+
+    <!-- Header -->
+    <div class="header">
+        <div class="nav-container">
+            <nav class="nav">
+                <a href="#">Тест1</a>
+                <a href="#">Тест2</a>
+                <a href="#">Тест3</a>
+                <a href="#">Тест4</a>
+                <a href="#">Тест5</a>
+                <a href="#">Тест6</a>
+            </nav>
+        </div>
+    </div>
+    <div class="div1 ">div1</div>
+    <div class="div2">div2</div>
+    <div class="div3 wow fadeInLeft">div3</div>
+
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="wow/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <script>
+        $(function() {
+            function navigation_scroll(){
+                var offset = $('.header').height() || $(window).height() || 150;
+                var scroll = $(document).scrollTop();
+                // Цифрами регулируем срабатывание скрипта при скроле от верха экрана
+                if (scroll < 200) {
+                    $('.header')
+                    .toggleClass('header-no-fixed', false)
+                    .toggleClass('header-fixed', false);
+                }     
+                else if (scroll >= offset) {
+                    $('.header')
+                    .toggleClass('header-no-fixed', false)
+                    .toggleClass('header-fixed', true);
+
+                }
+                else if (scroll < offset - 200) {
+                    $('.header')
+                    .toggleClass('header-fixed', true)
+                    .toggleClass('header-no-fixed', false);
+                }
+            }
+            $(document).scroll(function(){
+
+                navigation_scroll();
+            });
+        });
+    </script>
+
+</body>
+</html>
